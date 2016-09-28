@@ -3,7 +3,23 @@ int errT_num = 0; // comptage des erreurs de transmission
 int errR_num = 0; //comptage des erreurs de reception
 semaphore  semT = new(1);
 semaphore  semR = new(1);
-        // Pilote du p�riph�rique c�t� bus   
+        // Pilote du p�riph�rique c�t� bus
+
+// config
+typedef  enum  {br_9600=9600,  br_19200=19200,  br_115200=115200,  br_153600=153600, br_921600=921600} Valid_baudrate; 
+typedef enum  {NONE=0, EVEN=1, ODD=3} Parity; 
+
+class Uart_config;
+  rand Valid_baudrate baud_rate;
+  rand Parity parity;
+
+  function report();
+    $display(" baudrate : %d", this.baud_rate);
+    $display(" parity : %d", this.parity);
+  endfunction : report
+
+endclass : Uart_config
+
 class Uart_driver;
    time Tck = 20000ps;
    local virtual if_to_Uart bfm,bfm2;
