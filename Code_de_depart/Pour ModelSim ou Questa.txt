@@ -1,0 +1,8 @@
+Pour ModelSim ou Questa :
+-	Créer un projet dans le répertoire où est situé ce fichier
+-	Pour Questa : ajouter au projet tous les fichiers sources de ce répertoire, sauf le fichier « module_test_uart.sv », et ceux du sous répertoire « module_uart »
+-	Pour ModelSim PE : le fichier « module_test_uart.sv » peut doit être utilisé à la place de « test_uart.sv », il remplace le programme par un module et utilise des assertions procédurales. Il faut également mettre en commentaire les assertions concurrentes et les groupes de couverture (fichiers « if_to_Uart.sv » et « pkg_uart_test_classes.sv ») qui ne sont pas acceptés par ModelSim PE.
+-	Compiler le projet avec l’option « compile order/autogenerate »
+-	Exécuter le fichier de commande « sim.do »
+-	Pour effectuer une simulation sur un modèle rétroannoté, généré par Quartus 8.0, il suffit de suivre la même procédure en utilisant les fichiers sources du dossier « retroannote » à la place des fichiers du dossier « module_uart ». Le plus pratique est de créer le projet dans ce dossier, le modèle trouvera alors le fichier de timings (« uartDevice_v.sdo ») automatiquement.
+

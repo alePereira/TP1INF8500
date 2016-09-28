@@ -1,0 +1,25 @@
+COVERGROUP COVERAGE:
+------------------------------------------------------------------------------------
+Covergroup                                             Metric      Goal/ Status     
+                                                                At Least            
+------------------------------------------------------------------------------------
+ TYPE /uart_test_classes/Uart_driver/cg                 40.0%        100 Uncovered  
+    Coverpoint cg::status                               40.0%        100 Uncovered  
+        bin Rx                                             10          1 Covered    
+        bin Tx                                            254          1 Covered    
+        bin O_err                                           0          1 ZERO       
+        bin P_err                                           0          1 ZERO       
+        bin F_err                                           0          1 ZERO       
+        default bin vide                                    0            ZERO       
+
+TOTAL COVERGROUP COVERAGE: 40.0%  COVERGROUP TYPES: 1
+
+DIRECTIVE COVERAGE:
+----------------------------------------------------------------------------------------
+Name                                     Design Design   Lang File(Line) Count Status    
+                                         Unit   UnitType                                 
+----------------------------------------------------------------------------------------
+/uart_tb/bfm/cover__read_ok              if_to_Uart Verilog  SVA  C:/Users/jacques/Documents/livre_verilog/uart_core_lvlg_edition/080705_rev_quartus_8/0828_module_driver_test_class/if_to_Uart_cb.sv(61)
+                                                                           271 Covered   
+
+TOTAL DIRECTIVE COVERAGE: 100.0%  COVERS: 1
