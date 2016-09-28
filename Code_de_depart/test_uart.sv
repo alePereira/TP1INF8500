@@ -17,29 +17,35 @@ program test_uart #(time Tck = 20000ps) (if_to_Uart bfm, bfm2);
       uart_rxtx = new(bfm,bfm2);
       uart_rxtx.run();
    end
-  
+
    initial begin
       uart_driver = new(bfm,bfm2,envoiT,envoiR,testT,testR);
       uart_write = new(envoiT,envoiR);
       uart_check = new(receptT,testT,receptR,testR);
       uart_receiver = new(bfm,bfm2,receptT,receptR);
-      uart_driver.init_uart(153600,Tck,3,3);
-      // 153600 bauds, Tx Rx int enable, error disable, sans parite
-      fork : test_simple
-         uart_driver.run();
-         uart_receiver.run();
-         uart_write.run();
-         uart_check.run();
-      join_any
-      disable test_simple;
-      $display("simulation terminée à %t",$time);
-      uart_check.bilan();
-      uart_driver.stats;
+      uart_config cfg= new;
+      repeat(10) begin
+        cfg.randomize();
+        bit[7:0] ctrl = 3 + (cfg.parity << 3);
+        uart_driver.init_uart(cfg.baud_rate, Tck, ctrl, ctrl);
+        // uart_driver.init_uart(153600,Tck,3,3);
+        // 153600 bauds, Tx Rx int enable, error disable, sans parite
+        fork : test_simple
+           uart_driver.run();
+           uart_receiver.run();
+           uart_write.run();
+           uart_check.run();
+        join_any
+        disable test_simple;
+        $display("simulation terminï¿½e ï¿½ %t",$time);
+        uart_check.bilan();
+        uart_driver.stats;
+      end
       $finish();
    end //initial
 
    final begin
       uart_check.bilan();
-   end //final      
-   
+   end //final
+
 endprogram : test_uart
