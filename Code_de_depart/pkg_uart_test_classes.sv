@@ -6,12 +6,14 @@ semaphore  semR = new(1);
         // Pilote du pï¿½riphï¿½rique cï¿½tï¿½ bus
 
 // config
-typedefÂ  enumÂ  {br_9600=9600,Â  br_19200=19200,Â  br_115200=115200,Â  br_153600=153600,Â br_921600=921600}Â Valid_baudrate;Â 
-typedef enum Â {NONE=0,Â EVEN=1,Â ODD=3}Â Parity;Â 
+typedef enum {br_9600=9600, br_19200=19200, br_115200=115200, br_153600=153600, br_921600=921600} Valid_baudrate;
+typedef enum {NONE=0, EVEN=1, ODD=3} Parity;
 
 class Uart_config;
   rand Valid_baudrate baud_rate;
   rand Parity parity;
+  
+
 
   function report();
     $display(" baudrate : %d", this.baud_rate);
@@ -64,9 +66,9 @@ class Uart_driver;
       this.test_mR = test_mR;
    endfunction : new
    
-// calcule le prédiviseur (en fonction de la vitesse choisie 
-// et de la fréquence d'horloge), réinitialise le
-// périphérique et fixe le protocole choisi (control)
+// calcule le prï¿½diviseur (en fonction de la vitesse choisie 
+// et de la frï¿½quence d'horloge), rï¿½initialise le
+// pï¿½riphï¿½rique et fixe le protocole choisi (control)
 // ici : sans traitement d'erreurs
    task init_uart(bit[31:0] baud_rate, time Tck,
                   bit[7:0] control,bit[7:0] control2);
@@ -97,16 +99,18 @@ class Uart_driver;
 
 	task runDUT();
 		forever begin
+			//cg.sample();
 			semT.get(1);
 			bfm.wait_it();
 			bfm.read_if(1,status);
-			//si il est pret a envoyer une nouvelle donnée on l'envoi
+			//si il est pret a envoyer une nouvelle donnï¿½e on l'envoi
 			if(status[5] == 1 && write_mT.try_get(write_datT)>0)begin
-				/*if (write_mT.num()==1)begin
+				if (write_mT.num()==1)begin
 					control[1]=0;
+					$display("end ...");
 					// inhibe les interruptions en transmission
 					bfm.write_if(1, control); 
-				end*/ 
+				end 
 				$display("1e UART transmet %d",write_datT);
 				test_mT.put(write_datT);            
 				bfm.write_if(0,write_datT);
@@ -118,16 +122,19 @@ class Uart_driver;
    
     task runReference();
 		forever begin
+			//cg.sample();
 			semR.get(1);
 			bfm2.wait_it();
+			
 			bfm2.read_if(1,status2);
-			//si il est pret a envoyer une nouvelle donnée on l'envoi
+			//si il est pret a envoyer une nouvelle donnï¿½e on l'envoi
 			if(status2[5] == 1 && write_mR.try_get(write_datR)>0)begin
-				/*if (write_mR.num()==1)begin
-					control[1]=0;
+				if (write_mR.num()==1)begin
+				$display("end ...");
+					control2[1]=0;
 					// inhibe les interruptions en transmission
-					bfm2.write_if(1, control); 
-				end */
+					bfm2.write_if(1, control2); 
+				end 
 				$display("2e UART transmet %d",write_datR);
 				test_mR.put(write_datR);            
 				bfm2.write_if(0,write_datR);
@@ -147,7 +154,7 @@ class Uart_driver;
    endtask : stats
 
 endclass : Uart_driver
-        // Source des données
+        // Source des donnï¿½es
 class Uart_write;
    mailbox envoiT,envoiR;
 
@@ -159,23 +166,24 @@ class Uart_write;
    task run();
       logic [7:0] dat = $random();
       repeat(10) begin
+		 #5ms;
          envoiR.put(dat);
 		 envoiT.put(dat);
-         $display("gene : %d envoyée",dat);
+         $display("gene : %d envoyï¿½e",dat);
          dat = $random();
          #($urandom_range(40e6)); 
-        // retard aléatoire en picosecondes
+        // retard alï¿½atoire en picosecondes
       end //repeat
-      #200ms; // Mise en someil du générateur
+      #200ms; // Mise en someil du gï¿½nï¿½rateur
    endtask : run
 endclass : Uart_write
 
-        // Contrôle de la réception
+        // Contrï¿½le de la rï¿½ception
 		
 class Uart_check;
-// Les données sont reçues par deux voies : 
-// directement du générateur dans la boite test
-// à travers le périphérique dans la boite recu
+// Les donnï¿½es sont reï¿½ues par deux voies : 
+// directement du gï¿½nï¿½rateur dans la boite test
+// ï¿½ travers le pï¿½riphï¿½rique dans la boite recu
    mailbox recuT, testT, recuR, testR;
 
    function new(mailbox recuT, testT,recuR,testR);
@@ -186,26 +194,39 @@ class Uart_check;
    endfunction : new
    
    task run();
-      logic [7:0] rec_dat, test_dat;
-      repeat(10) begin
-         recuT.get(rec_dat);
-         testT.get(test_dat);
+      //logic [7:0] rec_dat, test_dat;
+		repeat(10) begin
+			fork : parallelCheck
+			checkT();
+			checkR();
+			join
+			disable parallelCheck;
+		end //repeat
+   endtask : run
+   
+   task checkT();
+	 logic [7:0] rec_dat, test_dat;
+		recuT.get(rec_dat);
+        testT.get(test_dat);
          assert(rec_dat==test_dat)
-            //$display("check : %d transmis",test_dat);
+            $display("check : %d transmis",test_dat);
             else begin
-               //$display("erreur : %d transmis, %d attendu",rec_dat, test_dat);
+               $display("erreur : %d transmis, %d attendu",rec_dat, test_dat);
                errT_num +=1;
-               end
-	 /*recuR.get(rec_dat);
- 	 testR.get(test_dat);
-	 assert(rec_dat==test_dat)
+            end
+   endtask : checkT
+   
+   task checkR();
+	logic [7:0] rec_dat, test_dat;
+		recuR.get(rec_dat);
+		testR.get(test_dat);
+		assert(rec_dat==test_dat)
             $display("check : %d recu",test_dat);
             else begin
                $display("erreur : %d recu, %d attendu",rec_dat, test_dat);
                errR_num +=1;
-               end*/
-      end //repeat
-   endtask : run
+            end
+   endtask : checkR
    
    function void bilan();
       $display("nombre d'erreurs de transmission : %d",errT_num);
@@ -259,6 +280,7 @@ task receptDUT();
 	forever begin
 		semR.get(1);
 		bfm.wait_it();
+		
 		bfm.read_if(1,status);
 	   	if(status[0] == 1) begin
 			bfm.read_if(0,read_datR);
@@ -266,13 +288,13 @@ task receptDUT();
 			read_mR.put(read_datR);
 		end
 		if(status[1] == 1) begin
-           $display("à %t, Overrun error on reception",$time);
+           $display("ï¿½ %t, Overrun error on reception",$time);
            end
         if(status[2] == 1) begin
-           $display("à %t, Parity error on reception",$time);
+           $display("ï¿½ %t, Parity error on reception",$time);
            end
         if(status[3] == 1) begin
-           $display("à %t, Framing error on reception",$time);
+           $display("ï¿½ %t, Framing error on reception",$time);
        	end
 		semR.put(1);
 	end //forever
@@ -282,6 +304,7 @@ task receptReference();
 	forever begin
 		semT.get(1);
 		bfm2.wait_it();
+		
 		bfm2.read_if(1,status2);
 	   	if(status2[0] == 1) begin
 			bfm2.read_if(0,read_datT);
@@ -289,13 +312,13 @@ task receptReference();
 			read_mT.put(read_datT);
 		end
 		if(status2[1] == 1) begin
-           $display("à %t, Overrun error on emission",$time);
+           $display("ï¿½ %t, Overrun error on emission",$time);
            end
         if(status2[2] == 1) begin
-           $display("à %t, Parity error on emission",$time);
+           $display("ï¿½ %t, Parity error on emission",$time);
            end
         if(status2[3] == 1) begin
-           $display("à %t, Framing error on emission",$time);
+           $display("ï¿½ %t, Framing error on emission",$time);
        	end
 		semT.put(1);
 	end //forever
