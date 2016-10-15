@@ -7,19 +7,19 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 dX:/Documents/Code_lab_1/Code_de_depart
+Z0 dD:/Code_de_depart(TR done)
 T_opt
-!s110 1474755843
-VN<FWi`Z<m@>EbZP2j_3hZ2
+!s110 1476229685
+VhD5XU7EI:O[nfDa;DF:8M1
 04 7 4 work uart_tb fast 0
-=1-e069952eb7c4-57e6fd02-2c7-4844
+=1-00224d7c5419-57fd7a35-21-700c
 o-quiet -auto_acc_if_foreign -work work
 Z1 tCvgOpt 0
 n@_opt
 OL;O;10.5c;63
 vbiDirBuffer
 Z2 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z3 !s110 1474755841
+Z3 !s110 1476229684
 !i10b 1
 !s100 =ZRZ__2:G:R;7BKboB8a@1
 I[[]I[7Ve7AVVN54NdAhg32
@@ -27,7 +27,7 @@ Z4 VDg1SIo80bB@j0V0VzS_@n1
 Z5 !s105 biDirBuffer_sv_unit
 S1
 R0
-Z6 w1474042571
+Z6 w1475078968
 8module_uart/biDirBuffer.sv
 Fmodule_uart/biDirBuffer.sv
 L0 1
@@ -35,7 +35,7 @@ Z7 OL;L;10.5c;63
 r1
 !s85 0
 31
-Z8 !s108 1474755841.000000
+Z8 !s108 1476229683.000000
 Z9 !s107 module_uart/uartDevice.sv|module_uart/txCore.sv|module_uart/txControler.sv|module_uart/txControlFSM_jw.sv|module_uart/statusRegModule.sv|module_uart/shiftRegister.sv|module_uart/rxCore.sv|module_uart/rxControler.sv|module_uart/rxControlFSM.sv|module_uart/reg8Bits.sv|module_uart/parityGenerator.sv|module_uart/parity3.sv|module_uart/mux8Bits41.sv|module_uart/mux41.sv|module_uart/latchReg8Bits.sv|module_uart/intControler.sv|module_uart/genericCounter.sv|module_uart/decoder4.sv|module_uart/counter4Bits.sv|module_uart/bus4x8BitsInterface.sv|module_uart/biDirBuffer.sv|
 Z10 !s90 -reportprogress|300|-mfcu|-sv|module_uart/biDirBuffer.sv|module_uart/bus4x8BitsInterface.sv|module_uart/counter4Bits.sv|module_uart/decoder4.sv|module_uart/genericCounter.sv|module_uart/intControler.sv|module_uart/latchReg8Bits.sv|module_uart/mux41.sv|module_uart/mux8Bits41.sv|module_uart/parity3.sv|module_uart/parityGenerator.sv|module_uart/reg8Bits.sv|module_uart/rxControlFSM.sv|module_uart/rxControler.sv|module_uart/rxCore.sv|module_uart/shiftRegister.sv|module_uart/statusRegModule.sv|module_uart/txControlFSM_jw.sv|module_uart/txControler.sv|module_uart/txCore.sv|module_uart/uartDevice.sv|
 !i113 0
@@ -143,15 +143,15 @@ R1
 ngeneric@counter
 Yif_to_Uart
 R2
-Z12 !s110 1474755842
+R3
 !i10b 1
-!s100 W9_?gdH`Ndi5=gP:g5i9f1
-IzOg]c?8aKF=Vo`8@D7gOO0
+!s100 [Zm9hV6SkES;HZcJTk=5^1
+If@>IiMj>jW8NT97MLNN6f0
 R4
-Z13 !s105 if_to_UART_sv_unit
+Z12 !s105 if_to_UART_sv_unit
 S1
 R0
-w1474059877
+w1476229679
 8if_to_UART.sv
 Fif_to_UART.sv
 L0 2
@@ -159,9 +159,9 @@ R7
 r1
 !s85 0
 31
-Z14 !s108 1474755842.000000
-Z15 !s107 uart_tb.sv|top_UART_with.sv|test_uart.sv|pkg_uart_test_classes.sv|if_to_UART.sv|
-Z16 !s90 -reportprogress|300|-mfcu|-sv|if_to_UART.sv|pkg_uart_test_classes.sv|test_uart.sv|top_UART_with.sv|uart_tb.sv|
+Z13 !s108 1476229684.000000
+Z14 !s107 uart_tb.sv|top_UART_with.sv|test_uart.sv|pkg_uart_test_classes.sv|if_to_UART.sv|
+Z15 !s90 -reportprogress|300|-mfcu|-sv|if_to_UART.sv|pkg_uart_test_classes.sv|test_uart.sv|top_UART_with.sv|uart_tb.sv|
 !i113 0
 R11
 R1
@@ -391,7 +391,7 @@ R1
 nrx@control@f@s@m
 vrxCore
 R2
-R12
+R3
 !i10b 1
 !s100 UZg:gL9@V;G<Q8OkL1k@01
 IIVEPM[J?OUVPNbbRI=V;C2
@@ -416,7 +416,7 @@ R1
 nrx@core
 vshiftRegister
 R2
-R12
+R3
 !i10b 1
 !s100 o01QWfZlmA07WKkOVHRTR3
 Io`2dRoldbkSiC2f2<kU>i2
@@ -442,7 +442,7 @@ nshift@register
 vstatusBit
 R2
 DXx4 work 13 statusBitFunc 0 22 Bk=m39h67G>Ol]`^kNGfj2
-R12
+R3
 !i10b 1
 !s100 ;0f;@d<mI?F6j_W`h?DVY1
 I3R5gNLa=dL=M8YC]Hj0jb3
@@ -451,8 +451,8 @@ R5
 S1
 R0
 R6
-Z17 8module_uart/statusRegModule.sv
-Z18 Fmodule_uart/statusRegModule.sv
+Z16 8module_uart/statusRegModule.sv
+Z17 Fmodule_uart/statusRegModule.sv
 L0 15
 R7
 r1
@@ -467,7 +467,7 @@ R1
 nstatus@bit
 XstatusBitFunc
 R2
-R12
+R3
 !i10b 1
 !s100 XBTA1;=aMV1d@l^M4l<SQ3
 IBk=m39h67G>Ol]`^kNGfj2
@@ -475,8 +475,8 @@ VBk=m39h67G>Ol]`^kNGfj2
 S1
 R0
 R6
+R16
 R17
-R18
 L0 1
 R7
 r1
@@ -491,7 +491,7 @@ R1
 nstatus@bit@func
 vstatusRegModule
 R2
-R12
+R3
 !i10b 1
 !s100 ^f=bUUf?62R8N`Vi4Ko@A3
 IC_m<_<>2V@O?OXO9S581M0
@@ -500,8 +500,8 @@ R5
 S1
 R0
 R6
+R16
 R17
-R18
 L0 35
 R7
 r1
@@ -516,16 +516,16 @@ R1
 nstatus@reg@module
 4test_uart
 R2
-DXx4 work 17 uart_test_classes 0 22 @?6?_V?0AR=Ob5GFQ3WIA3
-R12
+DXx4 work 17 uart_test_classes 0 22 I_:IgDeOcjg@VnQ5<7Rod0
+R3
 !i10b 1
-!s100 Uo]ziL[Y4l>Ogd2SGNLXS1
-IBNZ1dDiS:S2T6f4Jb;He80
+!s100 EY1JVg_om@V7no3L71e<J3
+I8H2aFO@^:iLML0S^DT3Vh3
 R4
-R13
+R12
 S1
 R0
-w1474751611
+w1476228894
 8test_uart.sv
 Ftest_uart.sv
 L0 1
@@ -533,20 +533,20 @@ R7
 r1
 !s85 0
 31
+R13
 R14
 R15
-R16
 !i113 0
 R11
 R1
 vtop_Uart
 R2
-R12
+R3
 !i10b 1
 !s100 :78C6ES028]47ddb3BjR`0
 IebalUik=V=?[dgAG0H;3m3
 R4
-R13
+R12
 S1
 R0
 R6
@@ -557,16 +557,16 @@ R7
 r1
 !s85 0
 31
+R13
 R14
 R15
-R16
 !i113 0
 R11
 R1
 ntop_@uart
 vtxControler
 R2
-R12
+R3
 !i10b 1
 !s100 @2<nMMKe>NWA[^iZ;E3b>3
 Ioho0A^IHm[`g>Ih?JHRQ=0
@@ -591,7 +591,7 @@ R1
 ntx@controler
 vtxControlFSM
 R2
-R12
+R3
 !i10b 1
 !s100 b>JLi<@71PfCMb9Ti2?@X0
 IS0LEBMB=I`f?bB4?QIdLU3
@@ -616,7 +616,7 @@ R1
 ntx@control@f@s@m
 vtxCore
 R2
-R12
+R3
 !i10b 1
 !s100 `WSabzM7jK_n@0:dRY2lo2
 I^HdS8fH8o^=eH4U>[J`Gz2
@@ -641,15 +641,15 @@ R1
 ntx@core
 vuart_tb
 R2
-R12
+R3
 !i10b 1
 !s100 6bS_ED`E2@>hV_iE6l@1z1
 IJl=dN1U97:6;BcoHOXab31
 R4
-R13
+R12
 S1
 R0
-w1474064105
+R6
 8uart_tb.sv
 Fuart_tb.sv
 L0 1
@@ -657,23 +657,23 @@ R7
 r1
 !s85 0
 31
+R13
 R14
 R15
-R16
 !i113 0
 R11
 R1
 Xuart_test_classes
 !s115 if_to_Uart
 R2
-R12
+R3
 !i10b 1
-!s100 bkMU8lB@b0Tk4;VCmkbGR1
-I@?6?_V?0AR=Ob5GFQ3WIA3
-V@?6?_V?0AR=Ob5GFQ3WIA3
+!s100 FQW=no>YCOo^?SHUA4`9P3
+II_:IgDeOcjg@VnQ5<7Rod0
+VI_:IgDeOcjg@VnQ5<7Rod0
 S1
 R0
-w1474755757
+w1476228882
 8pkg_uart_test_classes.sv
 Fpkg_uart_test_classes.sv
 L0 1
@@ -681,15 +681,15 @@ R7
 r1
 !s85 0
 31
+R13
 R14
 R15
-R16
 !i113 0
 R11
 R1
 vuartDevice
 R2
-R12
+R3
 !i10b 1
 !s100 Yzl6KP;UfJQeCm=<KJGf51
 Ib:JOCS^2EoERkNI0A[KJe3

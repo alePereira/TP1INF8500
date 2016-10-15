@@ -1,0 +1,179 @@
+COVERGROUP COVERAGE:
+-----------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal    Status               
+                                                                                              
+-----------------------------------------------------------------------------------------------
+ TYPE /uart_tb/stimuli/Cg_config                        16.6%        100    Uncovered            
+    covered/total bins:                                     4         38                      
+    missing/total bins:                                    34         38                      
+    % Hit:                                              10.5%        100                      
+    Coverpoint Cg_config::Parity                        33.3%        100    Uncovered            
+        covered/total bins:                                 1          3                      
+        missing/total bins:                                 2          3                      
+        % Hit:                                          33.3%        100                      
+    Coverpoint Cg_config::Baud_rate                     20.0%        100    Uncovered            
+        covered/total bins:                                 1          5                      
+        missing/total bins:                                 4          5                      
+        % Hit:                                          20.0%        100                      
+    Cross Cg_config::#cross__0#                          6.6%        100    Uncovered            
+        covered/total bins:                                 1         15                      
+        missing/total bins:                                14         15                      
+        % Hit:                                           6.6%        100                      
+    Cross Cg_config::#cross__1#                          6.6%        100    Uncovered            
+        covered/total bins:                                 1         15                      
+        missing/total bins:                                14         15                      
+        % Hit:                                           6.6%        100                      
+ Covergroup instance \/uart_tb/stimuli/cg               16.6%        100    Uncovered            
+    covered/total bins:                                     4         38                      
+    missing/total bins:                                    34         38                      
+    % Hit:                                              10.5%        100                      
+    Coverpoint Parity                                   33.3%        100    Uncovered            
+        covered/total bins:                                 1          3                      
+        missing/total bins:                                 2          3                      
+        % Hit:                                          33.3%        100                      
+        bin auto[NONE]                                      0          1    ZERO                 
+        bin auto[EVEN]                                      0          1    ZERO                 
+        bin auto[ODD]                                       1          1    Covered              
+    Coverpoint Baud_rate                                20.0%        100    Uncovered            
+        covered/total bins:                                 1          5                      
+        missing/total bins:                                 4          5                      
+        % Hit:                                          20.0%        100                      
+        bin auto[br_9600]                                   0          1    ZERO                 
+        bin auto[br_19200]                                  0          1    ZERO                 
+        bin auto[br_115200]                                 0          1    ZERO                 
+        bin auto[br_153600]                                 0          1    ZERO                 
+        bin auto[br_921600]                                 1          1    Covered              
+    Cross #cross__0#                                     6.6%        100    Uncovered            
+        covered/total bins:                                 1         15                      
+        missing/total bins:                                14         15                      
+        % Hit:                                           6.6%        100                      
+        bin <auto[br_921600],auto[ODD]>                     1          1    Covered              
+        bin <auto[br_9600],auto[NONE]>                      0          1    ZERO                 
+        bin <auto[br_19200],auto[NONE]>                     0          1    ZERO                 
+        bin <auto[br_115200],auto[NONE]>                    0          1    ZERO                 
+        bin <auto[br_153600],auto[NONE]>                    0          1    ZERO                 
+        bin <auto[br_921600],auto[NONE]>                    0          1    ZERO                 
+        bin <auto[br_9600],auto[EVEN]>                      0          1    ZERO                 
+        bin <auto[br_19200],auto[EVEN]>                     0          1    ZERO                 
+        bin <auto[br_115200],auto[EVEN]>                    0          1    ZERO                 
+        bin <auto[br_153600],auto[EVEN]>                    0          1    ZERO                 
+        bin <auto[br_921600],auto[EVEN]>                    0          1    ZERO                 
+        bin <auto[br_9600],auto[ODD]>                       0          1    ZERO                 
+        bin <auto[br_19200],auto[ODD]>                      0          1    ZERO                 
+        bin <auto[br_115200],auto[ODD]>                     0          1    ZERO                 
+        bin <auto[br_153600],auto[ODD]>                     0          1    ZERO                 
+    Cross #cross__1#                                     6.6%        100    Uncovered            
+        covered/total bins:                                 1         15                      
+        missing/total bins:                                14         15                      
+        % Hit:                                           6.6%        100                      
+        bin <auto[br_921600],auto[ODD]>                     1          1    Covered              
+        bin <auto[br_9600],auto[NONE]>                      0          1    ZERO                 
+        bin <auto[br_19200],auto[NONE]>                     0          1    ZERO                 
+        bin <auto[br_115200],auto[NONE]>                    0          1    ZERO                 
+        bin <auto[br_153600],auto[NONE]>                    0          1    ZERO                 
+        bin <auto[br_921600],auto[NONE]>                    0          1    ZERO                 
+        bin <auto[br_9600],auto[EVEN]>                      0          1    ZERO                 
+        bin <auto[br_19200],auto[EVEN]>                     0          1    ZERO                 
+        bin <auto[br_115200],auto[EVEN]>                    0          1    ZERO                 
+        bin <auto[br_153600],auto[EVEN]>                    0          1    ZERO                 
+        bin <auto[br_921600],auto[EVEN]>                    0          1    ZERO                 
+        bin <auto[br_9600],auto[ODD]>                       0          1    ZERO                 
+        bin <auto[br_19200],auto[ODD]>                      0          1    ZERO                 
+        bin <auto[br_115200],auto[ODD]>                     0          1    ZERO                 
+        bin <auto[br_153600],auto[ODD]>                     0          1    ZERO                 
+ TYPE /uart_test_classes/Uart_driver/cg_driver           0.0%        100    ZERO                 
+    covered/total bins:                                     0         29                      
+    missing/total bins:                                    29         29                      
+    % Hit:                                               0.0%        100                      
+    Coverpoint cg_driver::status                         0.0%        100    ZERO                 
+        covered/total bins:                                 0          5                      
+        missing/total bins:                                 5          5                      
+        % Hit:                                           0.0%        100                      
+        bin Rx                                              0          1    ZERO                 
+        bin Tx                                              0          1    ZERO                 
+        bin O_err                                           0          1    ZERO                 
+        bin P_err                                           0          1    ZERO                 
+        bin F_err                                           0          1    ZERO                 
+        default bin vide                                    0               ZERO                 
+    Coverpoint cg_driver::input_values                   0.0%        100    ZERO                 
+        covered/total bins:                                 0          4                      
+        missing/total bins:                                 4          4                      
+        % Hit:                                           0.0%        100                      
+        bin low                                             0          1    ZERO                 
+        bin med_low                                         0          1    ZERO                 
+        bin med_high                                        0          1    ZERO                 
+        bin high                                            0          1    ZERO                 
+    Cross cg_driver::cross_status                        0.0%        100    ZERO                 
+        covered/total bins:                                 0         20                      
+        missing/total bins:                                20         20                      
+        % Hit:                                           0.0%        100                      
+        bin <Rx,low>                                        0          1    ZERO                 
+        bin <Tx,low>                                        0          1    ZERO                 
+        bin <O_err,low>                                     0          1    ZERO                 
+        bin <P_err,low>                                     0          1    ZERO                 
+        bin <F_err,low>                                     0          1    ZERO                 
+        bin <Rx,med_low>                                    0          1    ZERO                 
+        bin <Tx,med_low>                                    0          1    ZERO                 
+        bin <O_err,med_low>                                 0          1    ZERO                 
+        bin <P_err,med_low>                                 0          1    ZERO                 
+        bin <F_err,med_low>                                 0          1    ZERO                 
+        bin <Rx,med_high>                                   0          1    ZERO                 
+        bin <Tx,med_high>                                   0          1    ZERO                 
+        bin <O_err,med_high>                                0          1    ZERO                 
+        bin <P_err,med_high>                                0          1    ZERO                 
+        bin <F_err,med_high>                                0          1    ZERO                 
+        bin <Rx,high>                                       0          1    ZERO                 
+        bin <Tx,high>                                       0          1    ZERO                 
+        bin <O_err,high>                                    0          1    ZERO                 
+        bin <P_err,high>                                    0          1    ZERO                 
+        bin <F_err,high>                                    0          1    ZERO                 
+ CLASS Uart_driver
+ Covergroup instance \/uart_test_classes::Uart_driver::cg_driver  
+                                                         0.0%        100    ZERO                 
+    covered/total bins:                                     0         29                      
+    missing/total bins:                                    29         29                      
+    % Hit:                                               0.0%        100                      
+    Coverpoint status                                    0.0%        100    ZERO                 
+        covered/total bins:                                 0          5                      
+        missing/total bins:                                 5          5                      
+        % Hit:                                           0.0%        100                      
+        bin Rx                                              0          1    ZERO                 
+        bin Tx                                              0          1    ZERO                 
+        bin O_err                                           0          1    ZERO                 
+        bin P_err                                           0          1    ZERO                 
+        bin F_err                                           0          1    ZERO                 
+        default bin vide                                    0               ZERO                 
+    Coverpoint input_values                              0.0%        100    ZERO                 
+        covered/total bins:                                 0          4                      
+        missing/total bins:                                 4          4                      
+        % Hit:                                           0.0%        100                      
+        bin low                                             0          1    ZERO                 
+        bin med_low                                         0          1    ZERO                 
+        bin med_high                                        0          1    ZERO                 
+        bin high                                            0          1    ZERO                 
+    Cross cross_status                                   0.0%        100    ZERO                 
+        covered/total bins:                                 0         20                      
+        missing/total bins:                                20         20                      
+        % Hit:                                           0.0%        100                      
+        bin <Rx,low>                                        0          1    ZERO                 
+        bin <Tx,low>                                        0          1    ZERO                 
+        bin <O_err,low>                                     0          1    ZERO                 
+        bin <P_err,low>                                     0          1    ZERO                 
+        bin <F_err,low>                                     0          1    ZERO                 
+        bin <Rx,med_low>                                    0          1    ZERO                 
+        bin <Tx,med_low>                                    0          1    ZERO                 
+        bin <O_err,med_low>                                 0          1    ZERO                 
+        bin <P_err,med_low>                                 0          1    ZERO                 
+        bin <F_err,med_low>                                 0          1    ZERO                 
+        bin <Rx,med_high>                                   0          1    ZERO                 
+        bin <Tx,med_high>                                   0          1    ZERO                 
+        bin <O_err,med_high>                                0          1    ZERO                 
+        bin <P_err,med_high>                                0          1    ZERO                 
+        bin <F_err,med_high>                                0          1    ZERO                 
+        bin <Rx,high>                                       0          1    ZERO                 
+        bin <Tx,high>                                       0          1    ZERO                 
+        bin <O_err,high>                                    0          1    ZERO                 
+        bin <P_err,high>                                    0          1    ZERO                 
+        bin <F_err,high>                                    0          1    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 8.3%  COVERGROUP TYPES: 2

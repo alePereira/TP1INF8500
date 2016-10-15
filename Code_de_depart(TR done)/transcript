@@ -1,0 +1,188 @@
+# Compile of uart_tb.sv was successful.
+# Compile of if_to_Uart.sv was successful.
+# Compile of module_test_uart.sv was successful.
+# Compile of pkg_uart_test_classes.sv was successful.
+# Compile of test_uart.sv was successful.
+# Compile of top_Uart_with.sv was successful.
+# Compile of biDirBuffer.sv was successful.
+# Compile of bus4x8BitsInterface.sv was successful.
+# Compile of counter4Bits.sv was successful.
+# Compile of decoder4.sv was successful.
+# Compile of genericCounter.sv was successful.
+# Compile of intControler.sv was successful.
+# Compile of latchReg8Bits.sv was successful.
+# Compile of mux8Bits41.sv was successful.
+# Compile of mux41.sv was successful.
+# Compile of parity3.sv was successful.
+# Compile of parityGenerator.sv was successful.
+# Compile of reg8Bits.sv was successful.
+# Compile of rxControler.sv was successful.
+# Compile of rxControlFSM.sv was successful.
+# Compile of rxCore.sv was successful.
+# Compile of shiftRegister.sv was successful.
+# Compile of statusRegModule.sv was successful.
+# Compile of txControler.sv was successful.
+# Compile of txControlFSM_jw.sv was successful.
+# Compile of txCore.sv was successful.
+# Compile of uartDevice.sv was successful.
+# Compile of uart_tb.sv was successful.
+# Compile of if_to_Uart.sv was successful.
+# Compile of module_test_uart.sv was successful.
+# Compile of pkg_uart_test_classes.sv was successful.
+# Compile of test_uart.sv was successful.
+# Compile of top_Uart_with.sv was successful.
+# Compile of biDirBuffer.sv was successful.
+# Compile of bus4x8BitsInterface.sv was successful.
+# Compile of counter4Bits.sv was successful.
+# Compile of decoder4.sv was successful.
+# Compile of genericCounter.sv was successful.
+# Compile of intControler.sv was successful.
+# Compile of latchReg8Bits.sv was successful.
+# Compile of mux8Bits41.sv was successful.
+# Compile of mux41.sv was successful.
+# Compile of parity3.sv was successful.
+# Compile of parityGenerator.sv was successful.
+# Compile of reg8Bits.sv was successful.
+# Compile of rxControler.sv was successful.
+# Compile of rxControlFSM.sv was successful.
+# Compile of rxCore.sv was successful.
+# Compile of shiftRegister.sv was successful.
+# Compile of statusRegModule.sv was successful.
+# Compile of txControler.sv was successful.
+# Compile of txControlFSM_jw.sv was successful.
+# Compile of txCore.sv was successful.
+# Compile of uartDevice.sv was successful.
+# Compile of genericCounter.sv was successful.
+# Compile of uart_tb.sv was successful.
+# Compile of if_to_Uart.sv was successful.
+# Compile of module_test_uart.sv was successful.
+# Compile of pkg_uart_test_classes.sv was successful.
+# Compile of test_uart.sv was successful.
+# Compile of top_Uart_with.sv was successful.
+# Compile of biDirBuffer.sv was successful.
+# Compile of bus4x8BitsInterface.sv was successful.
+# Compile of counter4Bits.sv was successful.
+# Compile of decoder4.sv was successful.
+# Compile of genericCounter.sv was successful.
+# Compile of intControler.sv was successful.
+# Compile of latchReg8Bits.sv was successful.
+# Compile of mux8Bits41.sv was successful.
+# Compile of mux41.sv was successful.
+# Compile of parity3.sv was successful.
+# Compile of parityGenerator.sv was successful.
+# Compile of reg8Bits.sv was successful.
+# Compile of rxControler.sv was successful.
+# Compile of rxControlFSM.sv was successful.
+# Compile of rxCore.sv was successful.
+# Compile of shiftRegister.sv was successful.
+# Compile of statusRegModule.sv was successful.
+# Compile of txControler.sv was successful.
+# Compile of txControlFSM_jw.sv was successful.
+# Compile of txCore.sv was successful.
+# Compile of uartDevice.sv was successful.
+# Compile of if_to_Uart.sv was successful with warnings.
+# Compile of intControler.sv was successful.
+vsim -t ps work.uart_tb
+# //  ModelSim PE Student Edition 10.4a Apr  7 2015 
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# // NOT FOR CORPORATE OR PRODUCTION USE.
+# // THE ModelSim PE Student Edition IS NOT A SUPPORTED PRODUCT.
+# // FOR HIGHER EDUCATION PURPOSES ONLY
+# //
+# vsim -gui 
+# Start time: 15:55:46 on Oct 01,2016
+# Loading sv_std.std
+# Loading work.uart_tb
+# Loading work.if_to_Uart
+# Loading work.top_Uart
+# Loading work.uartDevice
+# Loading work.bus4x8BitsInterface
+# Loading work.biDirBuffer
+# Loading work.mux8Bits41
+# Loading work.decoder4
+# Loading work.reg8Bits
+# Loading work.statusRegModule
+# Loading work.intControler
+# Loading work.genericCounter
+# Loading work.txCore
+# Loading work.txControler
+# Loading work.counter4Bits
+# Loading work.txControlFSM
+# Loading work.parityGenerator
+# Loading work.shiftRegister
+# Loading work.rxCore
+# Loading work.rxControler
+# Loading work.rxControlFSM
+# ** Fatal: (vsim-3904) SystemVerilog Program Blocks are not supported in Modelsim PE.
+#    Time: 0 ps  Iteration: 0  Instance: /uart_tb File: C:/Users/Alexandre/Documents/TP1INF8500/Code_de_depart(TR done)/uart_tb.sv
+# FATAL ERROR while loading design
+# Error loading design
+# Compile of uart_tb.sv was successful.
+# Compile of if_to_Uart.sv was successful.
+# Compile of module_test_uart.sv was successful.
+# Compile of pkg_uart_test_classes.sv was successful.
+# Compile of test_uart.sv was successful.
+# Compile of top_Uart_with.sv was successful.
+# Compile of biDirBuffer.sv was successful.
+# Compile of bus4x8BitsInterface.sv was successful.
+# Compile of counter4Bits.sv was successful.
+# Compile of decoder4.sv was successful.
+# Compile of genericCounter.sv was successful.
+# Compile of intControler.sv was successful.
+# Compile of latchReg8Bits.sv was successful.
+# Compile of mux8Bits41.sv was successful.
+# Compile of mux41.sv was successful.
+# Compile of parity3.sv was successful.
+# Compile of parityGenerator.sv was successful.
+# Compile of reg8Bits.sv was successful.
+# Compile of rxControler.sv was successful.
+# Compile of rxControlFSM.sv was successful.
+# Compile of rxCore.sv was successful.
+# Compile of shiftRegister.sv was successful.
+# Compile of statusRegModule.sv was successful.
+# Compile of txControler.sv was successful.
+# Compile of txControlFSM_jw.sv was successful.
+# Compile of txCore.sv was successful.
+# Compile of uartDevice.sv was successful.
+vsim -t ps work.uart_tb
+# vsim 
+# Start time: 15:56:44 on Oct 01,2016
+# Loading sv_std.std
+# Loading work.uart_tb
+# Loading work.if_to_Uart
+# Loading work.top_Uart
+# Loading work.uartDevice
+# Loading work.bus4x8BitsInterface
+# Loading work.biDirBuffer
+# Loading work.mux8Bits41
+# Loading work.decoder4
+# Loading work.reg8Bits
+# Loading work.statusRegModule
+# Loading work.intControler
+# Loading work.genericCounter
+# Loading work.txCore
+# Loading work.txControler
+# Loading work.counter4Bits
+# Loading work.txControlFSM
+# Loading work.parityGenerator
+# Loading work.shiftRegister
+# Loading work.rxCore
+# Loading work.rxControler
+# Loading work.rxControlFSM
+# ** Fatal: (vsim-3904) SystemVerilog Program Blocks are not supported in Modelsim PE.
+#    Time: 0 ps  Iteration: 0  Instance: /uart_tb File: C:/Users/Alexandre/Documents/TP1INF8500/Code_de_depart(TR done)/uart_tb.sv
+# FATAL ERROR while loading design
+# Error loading design
+project open C:/Users/Alexandre/Documents/Poly/modelTech/TPINF8500

@@ -57,7 +57,14 @@ interface if_to_Uart (input bit clk) ;
    //   $display("donnée illisible");
 //      $fatal;
    //end
-
+	assert property (!adr[1]&adr[0]&dat[2] |=> inter) else begin
+			$display("assertion n'est pas rempli");
+			$fatal;
+	end
+	assert property (!adr[1]&adr[0]&dat[3] |=> inter) else begin
+			$display("assertion 2 n'est pas rempli");
+			$fatal;
+	end
    cover property (read_ok) ;
    
 endinterface : if_to_Uart

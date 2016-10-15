@@ -23,7 +23,9 @@ add wave {sim:/uart_tb/bfm/tx }
 add wave {sim:/uart_tb/bfm/inter } 
 add wave {sim:/uart_tb/stimuli/bfm/cb/inter } 
 add wave {sim:/uart_tb/bfm/arst } 
-#run -all
-#coverage report -detail -cvg -file report.txt
-#quit -sim
+add wave {sim:/uart_tb/bfm2/* } 
+
+run -all
+coverage report -detail -cvg -file report.txt
+quit -sim
 #run 40 ns
